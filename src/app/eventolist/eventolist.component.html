@@ -1,0 +1,32 @@
+<!-- LIST OF EVENTOS -->
+<div class="container-fluid">
+  <div class="row justify-content-md-center">
+    <div class="col-md-4 align-items-stretch" *ngFor="let evento of eventos">
+      <img class="card-img-top" src="assets/images/people-at-party.png" alt="Card image">
+      <div class="card-body">
+        <h4 class="card-title">{{ evento.name }}</h4>
+        <!-- <p class="card-text"> {{ evento.date | date:'dd/MM/yyyy HH:mm' }} </p> -->
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> {{ evento.date | date:'dd/MM/yyyy HH:mm' }} </li>
+          <li class="list-group-item">{{ evento.calle }} - {{ evento.localidad }}</li>
+        </ul>
+        <br>
+        <div class="pull-right">
+            <button class="btn btn-primary btn-xs fa fa-pencil" (click)="onEdit(evento)"></button>
+            <button class="btn btn-primary btn-xs fa fa-search-plus" (click)="onView(evento)"></button>
+            <button class="btn btn-danger btn-xs fa fa-trash-o" (click)="onRemove(evento)"></button>
+        </div>
+        </div>
+        <br>
+
+      </div>
+    </div>
+</div>
+
+<br>
+<!-- NEW ITEM -->
+<div class="row justify-content-md-center">
+		<nav>
+      <a routerLink="/new-evento" class="btn btn-primary">New evento</a>
+		</nav>
+</div>

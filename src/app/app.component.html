@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<p><a [routerLink]="['/login']">Logout</a></p>
+<div style="text-align:center">
+    <div *ngIf="currentUser" class="h3">
+        <h1>Hi {{currentUser.username}}!</h1>
+    </div>
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<router-outlet></router-outlet>
